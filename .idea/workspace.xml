@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fa239645-5ce1-440d-a0e6-55e76421d23e" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02_栈结构/01_栈的封装.html" beforeDir="false" afterPath="$PROJECT_DIR$/02_栈结构/01_栈的封装.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +50,7 @@
       <option name="presentableId" value="Default" />
       <updated>1684340656824</updated>
       <workItem from="1684340661056" duration="3487000" />
-      <workItem from="1684426196482" duration="641000" />
+      <workItem from="1684426196482" duration="2232000" />
     </task>
     <servers />
   </component>

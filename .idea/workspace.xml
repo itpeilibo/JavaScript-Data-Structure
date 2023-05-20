@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fa239645-5ce1-440d-a0e6-55e76421d23e" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_队列结构/01_封装队列.html" beforeDir="false" afterPath="$PROJECT_DIR$/03_队列结构/01_封装队列.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +21,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2PvblLkltn8sUx0ivG7Pp7O5W5t" />
   <component name="ProjectViewState">
@@ -51,7 +53,7 @@
       <option name="presentableId" value="Default" />
       <updated>1684340656824</updated>
       <workItem from="1684340661056" duration="3487000" />
-      <workItem from="1684426196482" duration="3349000" />
+      <workItem from="1684426196482" duration="4897000" />
     </task>
     <servers />
   </component>

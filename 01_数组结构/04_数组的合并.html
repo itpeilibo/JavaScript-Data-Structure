@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组的合并</title>
+</head>
+<body>
+<script>
+    // 数组的合并
+    // let nums1 = [1,2,3]
+    // let nums2 = [100,200,300]
+    // let newNums = nums1.concat(nums2)
+    // alert(newNums) // 1,2,3,100,200,300
+
+    // 定义数组
+    let names = ['abc','cb','mba','dna']
+
+    // 1. 判断数组的元素是否 都 包含a字符 使用 every 方法迭代
+    // let flag = names.every(t => {
+    //     return t.indexOf('a') !== -1
+    // })
+    // alert(flag) // false
+
+    // 2. 判断数组中是否包含 有 a字符的字符 使用 some 方法迭代
+    // let flag = names.some(t => {
+    //     return t.indexOf('a') !== -1
+    // })
+    // alert(flag) // true
+
+    // 3. 使用 forEach 方法迭代
+    // names.forEach(t => {
+    //     alert(t)
+    // })
+    // alert(names)
+
+    // 4. 在names中所有的元素后面拼接 -abc 使用 map 迭代
+    // let newNames = names.map(function (t) {
+    //     return t + '-abc'
+    // })
+    // alert(newNames) // abc-abc,cb-abc,mba-abc,dna-abc
+
+    // 5. 判断数组中是否包含 有 a字符的字符 使用 filter 方法迭代
+    // 获取names中所有包含'a'字符的元素
+    let newNames = names.filter(t => {
+        return t.indexOf('a') !== -1
+    })
+    alert(newNames) // abc,mba,dna
+
+
+
+
+
+
+</script>
+</body>
+</html>

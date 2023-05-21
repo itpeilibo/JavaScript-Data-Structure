@@ -28,7 +28,7 @@
         }
         // 4. 查看队列是否为空
         Queue.prototype.isEmpty = function () {
-            return this.items.length == 0
+            return this.items.length === 0
         }
         // 5. 查看队列中元素的个数
         Queue.prototype.size = function () {
@@ -45,27 +45,77 @@
     }
 
     // 使用队列
-    let queue = new Queue()
+    // let queue = new Queue()
+    //
+    // // 将元素加入到队列中
+    // queue.enqueue('abc')
+    // queue.enqueue('cba')
+    // queue.enqueue('nba')
+    // queue.enqueue('mba')
+    // alert(queue) // abc cba nba mba
+    //
+    // // 从队列中删除元素
+    // queue.dequeue()
+    // alert(queue) // cba nba mba
+    // queue.dequeue()
+    // alert(queue) // nba mba
+    //
+    // // front方法
+    // alert(queue.front()) // nbac
+    //
+    // // 验证其他方法
+    // alert(queue.isEmpty()) // false
+    // alert(queue.size()) // 2
 
-    // 将元素加入到队列中
-    queue.enqueue('abc')
-    queue.enqueue('cba')
-    queue.enqueue('nba')
-    queue.enqueue('mba')
-    alert(queue) // abc cba nba mba
+    // 面试题：击鼓传花
+    function passGame(nameList,num) {
+        // 1. 创建一个队列
+        let queue = new Queue()
 
-    // 从队列中删除元素
-    queue.dequeue()
-    alert(queue) // cba nba mba
-    queue.dequeue()
-    alert(queue) // nba mba
+        // 2. 将所有人依次加入到队列中
+        for (let i = 0; i < nameList.length; i++) {
+            queue.enqueue(nameList[i])
+        }
 
-    // front方法
-    alert(queue.front()) // nbac
+        // 3. 开始数数字
+        // 第一种
+       // while (queue.size() > 1) {
+       //     // 不是num的时候，重新加入到队列的末尾
+       //     // 是num这个数字的时候，将其从队列中删除
+       //
+       //     for (let i = 0; i < num - 1; i++) {
+       //         queue.enqueue(queue.dequeue())
+       //     }
+       //     queue.dequeue()
+       // }
+       //  alert(queue.size())
+       //  let endName = queue.front()
+       //  alert('最终剩下的人:' + endName)
+       //  return nameList.indexOf(endName)
 
-    // 验证其他方法
-    alert(queue.isEmpty()) // false
-    alert(queue.size()) // 2
+        // 第二种
+        while (queue.size() > 1) {
+            for (let i = 0; i < num; i++) {
+                queue.enqueue(queue.dequeue())
+            }
+            nameList.push(queue.dequeue())
+        }
+        return {
+            nameLi : nameList,
+            winner: queue.dequeue()
+        }
+    }
+
+    // 测试击鼓传花
+    names = ['Lily','Lucy','Tom','Lilei','Why']
+    // alert(passGame(names,3))
+    let result = passGame(names,3)
+
+    result.nameLi.forEach(name => {
+        console.log(`${name}在击鼓传花中被淘汰了。`)
+    })
+    console.log(`胜利者：${result.winner}`)
+
 </script>
 </body>
 </html>

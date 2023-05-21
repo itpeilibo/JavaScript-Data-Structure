@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reduce方法</title>
+</head>
+<body>
+<script>
+    // 1. 定义数组
+    let numbers = [1, 2, 3, 4]
+
+    // 2. for实现累加
+    // let total = 0
+    // for (let i = 0; i < numbers.length; i++) {
+    //     total += numbers[i]
+    // }
+    // alert(total) // 10
+
+    // 3. 使用forEach
+    // let total = 0
+    // numbers.forEach( i => {
+    //     total += i
+    // })
+    // alert(total) // 10
+
+    // 4. 使用reduce方法
+    let total = numbers.reduce((pre,cur) => {
+        return pre + cur
+    },0)
+    alert(total)
+</script>
+</body>
+</html>

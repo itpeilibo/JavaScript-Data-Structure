@@ -18,6 +18,26 @@
         // 属性
         this.head = null
         this.length = 0
+
+        // 1. 追加方法
+        LinkedList.prototype.append = function (data) {
+            // 1. 创建新的节点
+            let newNode = new Node(data)
+            // 2. 判断是否添加的是一个节点
+            if (this.length === 0) { // 2.1 是第一个节点
+                this.head = newNode
+            } else {                 // 2.2 不是第一个节点
+                // 找到最后一个节点
+                let current = this.head
+                while (current.next) {
+                    current = current.next
+                }
+                // 最后节点的next指向新的节点
+                current.next = newNode
+            }
+            // 3. length + 1
+            this.length++
+        }
     }
 </script>
 </body>

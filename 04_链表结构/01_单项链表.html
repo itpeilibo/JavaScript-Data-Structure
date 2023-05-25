@@ -113,6 +113,22 @@
             return -1
         }
 
+        // 6. update 方法
+        LinkedList.prototype.update = function (position,newData) {
+            // 1. 越界判断
+            if (position < 0 || position >= this.length) return false
+
+            // 2. 查找正确节点
+            let current = this.head
+            let index = 0
+            while (index++ < position) {
+                current = current.next
+            }
+            // 3. 将position位置的node的data修改成newData
+            current.data = newData
+            return true
+        }
+
     }
 
 
@@ -133,14 +149,19 @@
     alert(list) // aaa abc cba bbb nba ccc
 
     // 4. 测试get方法
-    alert(list.get(0))
-    alert(list.get(3))
-    alert(list.get(5))
+    // alert(list.get(0))
+    // alert(list.get(3))
+    // alert(list.get(5))
 
     // 5. 测试 indexof 方法
-    alert(list.indexOf('abc')) // 1
-    alert(list.indexOf('bbb')) // 3
-    alert(list.indexOf('ccc')) // 5
+    // alert(list.indexOf('abc')) // 1
+    // alert(list.indexOf('bbb')) // 3
+    // alert(list.indexOf('ccc')) // 5
+
+    // 6. 测试 update 方法
+    list.update(0,'mmm')
+    list.update(3,'nnn')
+    alert(list)
 
 
 </script>

@@ -82,15 +82,44 @@
 
             return true
         }
+
+        // 4. get方法
+        LinkedList.prototype.get = function (position) {
+            // 1. 越界判断
+            if (position < 0 || position >= this.length) return null
+            // 2. 获取对应的data
+            let current = this.head
+            let index = 0
+            while (index++ < position) {
+                current = current.next
+            }
+            return current.data
+        }
+
     }
+
 
     // 测试代码
     // 1. 创建LinkedList
     let list = new LinkedList()
+
+    // 2. 测试append方法
     list.append('abc')
     list.append('cba')
     list.append('nba')
+    // alert(list)
+
+    // 3. 测试insert方法
+    list.insert(0,'aaa')
+    list.insert(3,'bbb')
+    list.insert(5,'ccc')
     alert(list)
+
+    // 4. 测试get方法
+    alert(list.get(0))
+    alert(list.get(3))
+    alert(list.get(5))
+
 </script>
 </body>
 </html>

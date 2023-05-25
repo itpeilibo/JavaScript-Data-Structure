@@ -95,6 +95,23 @@
             }
             return current.data
         }
+        // 5. indexOf 方法
+        LinkedList.prototype.indexOf = function (data) {
+            // 1. 定义变量
+            let current = this.head
+            let index = 0
+
+            // 2. 开始查找
+            while (current) {
+                if (current.data === data) {
+                    return index
+                }
+                current = current.next
+                index++
+            }
+            // 3. 找到最后没有找到，返回-1
+            return -1
+        }
 
     }
 
@@ -113,12 +130,18 @@
     list.insert(0,'aaa')
     list.insert(3,'bbb')
     list.insert(5,'ccc')
-    alert(list)
+    alert(list) // aaa abc cba bbb nba ccc
 
     // 4. 测试get方法
     alert(list.get(0))
     alert(list.get(3))
     alert(list.get(5))
+
+    // 5. 测试 indexof 方法
+    alert(list.indexOf('abc')) // 1
+    alert(list.indexOf('bbb')) // 3
+    alert(list.indexOf('ccc')) // 5
+
 
 </script>
 </body>

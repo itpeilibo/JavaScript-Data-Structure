@@ -164,6 +164,16 @@
             return this.removeAt(position)
         }
 
+        // 9. isEmpty方法
+        LinkedList.prototype.isEmpty = function () {
+            return this.length === 0
+        }
+
+        // 10. size方法
+        LinkedList.prototype.size = function () {
+            return this.length
+        }
+
     }
 
 
@@ -209,6 +219,11 @@
     alert(list)
     list.remove('cba')
     alert(list)
+
+    // 9. 测试isEmpty / size
+
+    alert(list.isEmpty())
+    alert(list.size())
 </script>
 </body>
 </html>

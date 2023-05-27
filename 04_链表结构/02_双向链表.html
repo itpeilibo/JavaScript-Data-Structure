@@ -23,7 +23,7 @@
         this.legnth = 0
 
         // 常见的操作: 方法
-
+        // 1. append 方法
         DoublyLinkedList.prototype.append = function (element) {
             // 1. 根据元素创建接节点
             let newNode = new Node(element)
@@ -41,7 +41,51 @@
             this.legnth++
         }
 
+        // 2. 将链表转成字符串形式
+        // 2.1 toString 方法
+        DoublyLinkedList.prototype.toString  = function () {
+            return this.backwardString()
+        }
+
+        // 2.2 forwardString 方法 向前遍历
+        DoublyLinkedList.prototype.forwardString = function () {
+            // 1. 定义变量
+            let current = this.tail
+            let resultString = ''
+            // 2. 依次向前遍历，获取每一个节点
+            while (current) {
+                resultString += current.data + ' '
+                current = current.prev
+            }
+            return resultString
+        }
+
+        // 2.3 backwardString 方法  向后遍历
+        DoublyLinkedList.prototype.backwardString = function () {
+            // 1. 定义变量
+            let current = this.head
+            let resultString = ''
+            // 2. 依次向后遍历，获取每一个节点
+            while (current) {
+                resultString += current.data + ' '
+                current = current.next
+            }
+            return resultString
+        }
+
     }
+
+    // 测试代码
+    let list = new DoublyLinkedList()
+
+    // 1. 测试 append方法
+    list.append('abc')
+    list.append('cba')
+    list.append('nba')
+
+    alert(list.toString())
+    alert(list.backwardString())
+    alert(list.forwardString())
 </script>
 </body>
 </html>

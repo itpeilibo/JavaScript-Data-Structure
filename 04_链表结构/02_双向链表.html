@@ -19,10 +19,28 @@
 
         // 属性
         this.head = null
-        this.title = null
+        this.tail = null
         this.legnth = 0
 
         // 常见的操作: 方法
+
+        DoublyLinkedList.prototype.append = function (element) {
+            // 1. 根据元素创建接节点
+            let newNode = new Node(element)
+
+            // 2. 判断列表是否为空列表
+            if (this.head === null) {
+                this.head = newNode
+                this.tail = newNode
+            } else {
+                this.tail.next = newNode
+                newNode.prev = this.tail
+                this.tail = newNode
+            }
+            // 3. legnth + 1
+            this.legnth++
+        }
+
     }
 </script>
 </body>

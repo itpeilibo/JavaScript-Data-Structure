@@ -124,20 +124,47 @@
             if (position < 0 || position >= this.legnth) return null
 
             // 2. 获取元素
-            let current = this.head
+            let current = null
             let index = 0
-            while (index++ < position) {
-                current = current.next
-            }
+            //this.length / 2 > position:从头开始遍历
+           if ((this.legnth / 2) > position) {
+               current = this.head
+               while (index++ < position) {
+                   current = current.next
+               }
+               //this.length / 2 =< position:从尾开始遍历
+           } else {
+               current = this.tail
+               index = this.legnth - 1
+               while (index-- > position) {
+                   current = current.prev
+               }
+           }
             return current.data
         }
+
+        // 5. indexOf 方法
+        DoublyLinkedList.prototype.indexOf = function (data) {
+            // 1. 定义变量
+            let current = this.head
+            let index = 0
+            while (current) {
+                if (current.data === data) {
+                    return index
+                }
+                current = current.next
+                index++
+            }
+            return -1
+        }
+
 
     }
 
     // 测试代码
     let list = new DoublyLinkedList()
 
-    // 1. 测试 append方法
+    // 1. 测试 append 方法
     list.append('abc')
     list.append('cba')
     list.append('nba')
@@ -147,17 +174,22 @@
     // alert(list.backwardString())
     // alert(list.forwardString())
 
-    // 3. insert方法
+    // 3. 测试 insert 方法
     list.insert(0,'aaa')
     list.insert(4,'bbb')
     list.insert(2,'ccc')
     console.log(list)
     alert(list) // aaa abc ccc cba nba bbb
 
-    // 4. get 方法
+    // 4. 测试 get 方法
     alert(list.get(0)) // aaa
     alert(list.get(2)) // ccc
     alert(list.get(5)) // bbb
+
+    // 5. 测试 indexOf 方法
+    alert(list.indexOf('aaa')) // 0
+    alert(list.indexOf('bbb')) // 5
+    alert(list.indexOf('ccc')) // 2
 </script>
 </body>
 </html>

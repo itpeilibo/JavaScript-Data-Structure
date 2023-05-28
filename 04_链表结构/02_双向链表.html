@@ -73,6 +73,51 @@
             return resultString
         }
 
+        // 3. insert 方法
+        DoublyLinkedList.prototype.insert = function (position, data) {
+            // 1. 越界判断
+            if (position < 0 || position > this.legnth ) return false
+
+            // 2. 根据data创建新的节点
+            let newNode = new Node(data)
+
+            // 3. 判断原来的列表是否为空
+            // 在第一个位置插入数据
+            if (this.legnth === 0) {
+                this.head = newNode
+                this.tail = newNode
+            } else {
+                // 3.1 判断position是否为0
+                if (position === 0) {
+                    this.head.prev = newNode
+                    newNode.next = this.head
+                    this.head = newNode
+                    // 3.2 插入到最后的情况
+                } else if (position === this.legnth) {
+                    newNode.prev = this.tail
+                    this.tail.next = newNode
+                    this.tail = newNode
+                    // 3.2 在中间位置插入数据
+                } else {
+                    let index = 0
+                    let current = this.head
+                    // 修改指针
+                    while (index++ < position) {
+                        current = current.next
+                    }
+                    // 交换节点的指向顺序
+                    newNode.next = current
+                    newNode.prev = current.prev
+                    current.prev.next = newNode
+                    current.prev = newNode
+
+                }
+            }
+            // 4. legnth++
+            this.legnth++
+            return true
+        }
+
     }
 
     // 测试代码
@@ -82,10 +127,14 @@
     list.append('abc')
     list.append('cba')
     list.append('nba')
-
-    alert(list.toString())
-    alert(list.backwardString())
-    alert(list.forwardString())
+    // alert(list.toString())
+    // alert(list.backwardString())
+    // alert(list.forwardString())
+    list.insert(0,'aaa')
+    list.insert(4,'bbb')
+    list.insert(2,'ccc')
+    console.log(list)
+    alert(list)
 </script>
 </body>
 </html>

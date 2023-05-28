@@ -158,6 +158,31 @@
             return -1
         }
 
+        // 6. update 方法
+        DoublyLinkedList.prototype.update = function (position,newData) {
+            // 1. 越界判断
+            if (position < 0 || position > this.legnth) return false
+            // 2. 寻找正确的节点
+            let current = this.head
+            let index = 0
+            //this.length / 2 > position:从头开始遍历
+            if (this.legnth / 2 > position) {
+                while (index++ < position) {
+                    current = current.next
+                }
+                //this.length / 2 =< position:从尾开始遍历
+            } else {
+                current  = this.tail
+                index = this.legnth - 1
+                while (index-- > position) {
+                    current = current.prev
+                }
+            }
+            //3.修改找到节点的data
+            current.data = newData
+            return  true //表示成功修改
+        }
+
 
     }
 
@@ -182,14 +207,19 @@
     alert(list) // aaa abc ccc cba nba bbb
 
     // 4. 测试 get 方法
-    alert(list.get(0)) // aaa
-    alert(list.get(2)) // ccc
-    alert(list.get(5)) // bbb
+    // alert(list.get(0)) // aaa
+    // alert(list.get(2)) // ccc
+    // alert(list.get(5)) // bbb
 
     // 5. 测试 indexOf 方法
-    alert(list.indexOf('aaa')) // 0
-    alert(list.indexOf('bbb')) // 5
-    alert(list.indexOf('ccc')) // 2
+    // alert(list.indexOf('aaa')) // 0
+    // alert(list.indexOf('bbb')) // 5
+    // alert(list.indexOf('ccc')) // 2
+
+    // 6. 测试 update 方法
+    list.update(0,'mmm')
+    list.update(1,'nnn')
+    alert(list)
 </script>
 </body>
 </html>

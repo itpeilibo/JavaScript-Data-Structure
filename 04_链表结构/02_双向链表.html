@@ -118,6 +118,20 @@
             return true
         }
 
+        // 4. get 方法
+        DoublyLinkedList.prototype.get = function (position) {
+            // 1. 越界判断
+            if (position < 0 || position >= this.legnth) return null
+
+            // 2. 获取元素
+            let current = this.head
+            let index = 0
+            while (index++ < position) {
+                current = current.next
+            }
+            return current.data
+        }
+
     }
 
     // 测试代码
@@ -127,14 +141,23 @@
     list.append('abc')
     list.append('cba')
     list.append('nba')
+
+    // 2. 测试转成字符串的方法
     // alert(list.toString())
     // alert(list.backwardString())
     // alert(list.forwardString())
+
+    // 3. insert方法
     list.insert(0,'aaa')
     list.insert(4,'bbb')
     list.insert(2,'ccc')
     console.log(list)
-    alert(list)
+    alert(list) // aaa abc ccc cba nba bbb
+
+    // 4. get 方法
+    alert(list.get(0)) // aaa
+    alert(list.get(2)) // ccc
+    alert(list.get(5)) // bbb
 </script>
 </body>
 </html>

@@ -183,6 +183,36 @@
             return  true //表示成功修改
         }
 
+        // 7. removeAt 方法
+        DoublyLinkedList.prototype.removeAt = function (position) {
+            // 1. 越界判断
+            if (position < 0 || position >= this.legnth) return null
+
+            // 2. 判断是否只有一个节点
+            if (this.legnth == 1) {
+                this.head = null
+                this.tail = null
+            } else {
+                // 判断是否删除的是第一个节点
+                if (position === 0 ) {
+                    this.head.next.prev = null
+                    this.head = this.head.next
+                    // 是否是最后节点
+                } else if (position == length -1) {
+                    this.tail.prev.next = null
+                    this.tail = this.tail.prev
+                } else {
+                    let index = 0
+                    let current = this.head
+                    while (index++ < position) {
+                        current = current.next
+                    }
+                    current.prev.next = current.next
+                    current.next.prev = current.prev
+                }
+            }
+        }
+
 
     }
 

@@ -189,6 +189,7 @@
             if (position < 0 || position >= this.legnth) return null
 
             // 2. 判断是否只有一个节点
+            let current = this.head
             if (this.legnth == 1) {
                 this.head = null
                 this.tail = null
@@ -199,11 +200,11 @@
                     this.head = this.head.next
                     // 是否是最后节点
                 } else if (position == length -1) {
+                    current = this.tail
                     this.tail.prev.next = null
                     this.tail = this.tail.prev
                 } else {
                     let index = 0
-                    let current = this.head
                     while (index++ < position) {
                         current = current.next
                     }
@@ -211,6 +212,9 @@
                     current.next.prev = current.prev
                 }
             }
+            // 3. length - 1
+            length--
+            return current.data
         }
 
 
@@ -234,7 +238,7 @@
     list.insert(4,'bbb')
     list.insert(2,'ccc')
     console.log(list)
-    alert(list) // aaa abc ccc cba nba bbb
+    // alert(list) // aaa abc ccc cba nba bbb
 
     // 4. 测试 get 方法
     // alert(list.get(0)) // aaa
@@ -249,6 +253,12 @@
     // 6. 测试 update 方法
     list.update(0,'mmm')
     list.update(1,'nnn')
+    alert(list)
+
+    // 7. 测试removeAt 方法s
+    alert(list.removeAt(1))
+    alert(list)
+    alert(list.removeAt(0))
     alert(list)
 </script>
 </body>

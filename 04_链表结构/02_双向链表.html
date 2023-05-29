@@ -217,6 +217,17 @@
             return current.data
         }
 
+            // 8. remove 方法
+        DoublyLinkedList.prototype.remove = function (data) {
+            // 1. 根据data获取下标值
+            let index = this.indexOf(data)
+
+            // 2. 根据index删除对应位置的节点
+            return this.removeAt(index)
+        }
+
+
+
 
     }
 
@@ -259,6 +270,12 @@
     alert(list.removeAt(1))
     alert(list)
     alert(list.removeAt(0))
+    alert(list)
+
+    // 8. 测试remove方法
+    alert(list.remove('cba'))
+    alert(list)
+    alert(list.remove('nba'))
     alert(list)
 </script>
 </body>

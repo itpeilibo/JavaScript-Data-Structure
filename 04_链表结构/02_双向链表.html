@@ -227,22 +227,22 @@
         }
 
         // 9. isEmpty 方法
-        DoublyLinkedList.prototype.isEmpty = function () {
-            return this.legnth === 0
+        DoublyLinkedList.prototype.isEmpty = () => {
+            return this.legnth == 0
         }
 
         // 10. size 方法
-        DoublyLinkedList.prototype.size = function () {
+        DoublyLinkedList.prototype.size =  () => {
             return this.legnth
         }
 
         // 11. 获取链表的第一个元素
-        DoublyLinkedList.prototype.getHead = function () {
+        DoublyLinkedList.prototype.getHead = () => {
             return this.head.data
         }
 
         // 12. 获取链表的最后一个元素
-        DoublyLinkedList.prototype.getTail = function () {
+        DoublyLinkedList.prototype.getTail = () => {
             return this.tail.data
         }
 
@@ -295,6 +295,12 @@
     alert(list)
     alert(list.remove('nba'))
     alert(list)
+
+    // 9. 测试其他方法
+    alert(list.isEmpty())
+    alert(list.size())
+    alert(list.getHead())
+    alert(list.getTail())
 </script>
 </body>
 </html>

@@ -57,6 +57,28 @@
             return Object.keys(this.items)
         }
 
+        // 集合间的操作
+        // 并集
+        Set.prototype.union = (otherSet) => {
+            // this: 集合对象A
+            // otherSet： 集合对象B
+            // 1. 创建新的集合
+            let unionSet = new Set()
+
+            // 2. 将A集合中所有的元素添加到新集合中
+            let values = this.values()
+            for (let i = 0; i < values.length; i++) {
+                unionSet.add(values[i])
+            }
+
+            // 3. 取出B集合中的元素，判断是否需要加到新集合
+            values = otherSet.values()
+            for (let i = 0; i < values.length; i++) {
+                unionSet.add(values[i])
+            }
+            return unionSet
+        }
+
     }
 
     // 测试Set类
@@ -72,6 +94,16 @@
 
     // 3. 删除元素
     alert(set.remove('mba'))
+    alert(set.remove('mba'))
+    alert(set.values())
+
+    // 4. has 方法
+    alert(set.has('abc'))
+
+    // 5. 获取元素的个数
+    alert(set.size())
+    set.clear()
+    alert(set.size())
 </script>
 </body>
 </html>

@@ -13,97 +13,143 @@
         // 属性
         this.items = {}
 
-        // 方法
-        // 1. has 方法
-        Set.prototype.has = (value) => {
+        //方法
+        //一.has方法
+        Set.prototype.has = value => {
             return this.items.hasOwnProperty(value)
         }
-        // // 2.add 方法
-        Set.prototype.add = (value) => {
-            // 判断当前是否已经包含了该元素
+
+        //二.add方法
+        Set.prototype.add = value => {
+            //判断集合中是否已经包含该元素
             if (this.has(value)) {
                 return false
             }
-
-            // 将元素添加到集合中
-            this.items[value] = value
-            return true
+            //将元素添加到集合中
+            this.items[value] = value//表示该属性键和值都为value
+            return true//表示添加成功
         }
 
-        // 3. remove 方法
+        //三.remove方法
         Set.prototype.remove = (value) => {
-            // 1. 判断该集合中是否包含该元素
+            //1.判断集合中是否包含该元素
             if (!this.has(value)) {
                 return false
             }
 
-            // 2. 将元素从属性中删除
+            //2.将元素从属性中删除
             delete this.items[value]
             return true
         }
 
-        // 4. clear 方法
+        //四.clear方法
         Set.prototype.clear = () => {
+            //原来的对象没有引用指向，会被自动回收
             this.items = {}
         }
 
-        // 5. size 方法
+        //五.size方法
         Set.prototype.size = () => {
             return Object.keys(this.items).length
         }
 
-        // 6. 获取集合中所有的值
-        Set.prototype.values = () =>{
+        //获取集合中所有的值
+        //六.values方法
+        Set.prototype.values = function() {
             return Object.keys(this.items)
         }
 
         // 集合间的操作
         // 并集
-        Set.prototype.union = (otherSet) => {
-            // this: 集合对象A
-            // otherSet： 集合对象B
-            // 1. 创建新的集合
+        Set.prototype.union = otherSet => {
+            // this:集合对象A
+            // otherSet:集合对象B
+            //1.创建一个新的集合
             let unionSet = new Set()
 
-            // 2. 将A集合中所有的元素添加到新集合中
+            //2.将A集合中的所有元素添加到新集合中
             let values = this.values()
-            for (let i = 0; i < values.length; i++) {
+            // for(let i of values){
+            //   unionSet.add(i)
+            // }
+            for(let i = 0;i < values.length;i++){
                 unionSet.add(values[i])
             }
 
-            // 3. 取出B集合中的元素，判断是否需要加到新集合
+            //3.取出B集合中的元素,判断是否需要加到新集合中
             values = otherSet.values()
-            for (let i = 0; i < values.length; i++) {
+            // for(let i of values){
+            //   //由于集合的add方法已经对重复的元素进行了判断,所以这里可以直接添加
+            //   unionSet.add(i)
+            // }
+            for(let i = 0;i < values.length;i++){
                 unionSet.add(values[i])
             }
             return unionSet
         }
 
+        // 交集
+        Set.prototype.intersection = otherSet => {
+            // this: 集合A
+            // otherSet: 集合B
+            // 1. 创建新的集合
+            let intersectionSet = new Set()
+
+            // 2. 从A中取出一个个元素，判断是否同时存在于集合B中，存在放入新集合中
+            let values = this.values()
+            for(let i = 0; i < values.length; i++) {
+                let item = values[i]
+                if (otherSet.has(item)) {
+                    intersectionSet.add(item)
+                }
+            }
+            return intersectionSet
+        }
     }
 
     // 测试Set类
     // 1. 常见Set类对象
-    let set = new Set()
-
-    // 2. 添加元素
-    alert(set.add('abc'))
-    alert(set.add('cba'))
-    alert(set.add('nba'))
-    alert(set.add('mba'))
-    alert(set.values())
+    // let set = new Set()
+    //
+    // // 2. 添加元素
+    // alert(set.add('abc'))
+    // alert(set.add('cba'))
+    // alert(set.add('nba'))
+    // alert(set.add('mba'))
+    // alert(set.values())
 
     // 3. 删除元素
-    alert(set.remove('mba'))
-    alert(set.remove('mba'))
-    alert(set.values())
+    // alert(set.remove('mba'))
+    // alert(set.remove('mba'))
+    // alert(set.values())
+    //
+    // // 4. has 方法
+    // alert(set.has('abc'))
+    //
+    // // 5. 获取元素的个数
+    // alert(set.size())
+    // set.clear()
+    // alert(set.size())
 
-    // 4. has 方法
-    alert(set.has('abc'))
+    // 1. 创建两个集合，并且添加元素
+    let setA = new Set()
+    setA.add('abc')
+    setA.add('cba')
+    setA.add('nba')
+    let setB = new Set()
+    setB.add('aaa')
+    setB.add('nba')
+    setB.add('cba')
 
-    // 5. 获取元素的个数
-    alert(set.size())
-    set.clear()
-    alert(set.size())
+    // 2. 求两个集合的并集
+    unionSet = setA.union(setB)
+    alert(unionSet.values())
+    console.log(unionSet.values())
+
+    // 3. 求两个集合的交集
+    let intersectionSet = setA.intersection(setB)
+    alert(intersectionSet.values())
+    console.log(intersectionSet.values())
 </script>
 </body>
 </html>

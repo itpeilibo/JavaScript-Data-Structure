@@ -105,6 +105,24 @@
             }
             return intersectionSet
         }
+
+        // 差集
+        Set.prototype.difference = otherSet => {
+            // this: 差集A
+            // otherSet: 差集B
+            // 1. 创建新的集合
+            let differenceSet = new Set()
+
+            // 2. 取出A集合一个个元素，判断是否同时存在于B中，不存在B中，则添加到新集合中
+            let values = this.values()
+            for (let i = 0; i < values.length; i++) {
+                let item = values[i]
+                if (!otherSet.has(item)) {
+                    differenceSet.add(item)
+                }
+            }
+            return differenceSet
+        }
     }
 
     // 测试Set类
@@ -150,6 +168,10 @@
     let intersectionSet = setA.intersection(setB)
     alert(intersectionSet.values())
     console.log(intersectionSet.values())
+
+    // 4. 求两个集合的差集
+    let differenceSet = setA.difference(setB)
+    alert(differenceSet.values())
 </script>
 </body>
 </html>

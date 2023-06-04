@@ -34,7 +34,9 @@
         }
 
         //四.根据key获取value
-        // Dictionary.prototype.get
+        Dictionary.prototype.get = function (key) {
+            return this.has(key) ? this.items[key] : undefined
+        }
     }
 
     // 创建字典对象
@@ -47,10 +49,15 @@
     dict.set('address','广州市')
     console.log(dict)
 
+    // 在字典中根据key查找
     console.log(dict.has('age')) // true
 
+    // 字典删除方法
     dict.remove('name')
     console.log(dict)
+
+    // 获取字典的信息
+    console.log(dict.get('age'))
 
 </script>
 </body>

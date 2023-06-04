@@ -39,9 +39,14 @@
         }
 
         //五.获取所有keys
-        Dictionary.prototype.values = function () {
+        Dictionary.prototype.keys = function () {
             return Object.keys(this.items)
         }
+
+        //六.size方法
+        // Dictionary.prototype.size = function () {
+        //     return this.items.legnth
+        // }
     }
 
     // 创建字典对象
@@ -63,7 +68,7 @@
 
     // 获取字典的信息
     console.log(dict.get('age'))
-    console.log(dict.values())
+    console.log(dict.keys())
 
 </script>
 </body>

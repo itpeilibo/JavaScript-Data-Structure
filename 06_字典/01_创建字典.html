@@ -37,6 +37,11 @@
         Dictionary.prototype.get = function (key) {
             return this.has(key) ? this.items[key] : undefined
         }
+
+        //五.获取所有keys
+        Dictionary.prototype.values = function () {
+            return Object.keys(this.items)
+        }
     }
 
     // 创建字典对象
@@ -58,6 +63,7 @@
 
     // 获取字典的信息
     console.log(dict.get('age'))
+    console.log(dict.values())
 
 </script>
 </body>

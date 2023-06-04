@@ -61,7 +61,7 @@
 
         // 集合间的操作
         // 并集
-        Set.prototype.union = otherSet => {
+        Set.prototype.union = function (otherSet)  {
             // this:集合对象A
             // otherSet:集合对象B
             //1.创建一个新的集合
@@ -89,7 +89,7 @@
         }
 
         // 交集
-        Set.prototype.intersection = otherSet => {
+        Set.prototype.intersection = function (otherSet) {
             // this: 集合A
             // otherSet: 集合B
             // 1. 创建新的集合
@@ -107,7 +107,7 @@
         }
 
         // 差集
-        Set.prototype.difference = otherSet => {
+        Set.prototype.difference = function (otherSet)  {
             // this: 差集A
             // otherSet: 差集B
             // 1. 创建新的集合
@@ -125,7 +125,7 @@
         }
 
         // 子集
-        Set.prototype.subset = otherSet => {
+        Set.prototype.subset = function (otherSet)  {
             // this: 差集A
             // otherSet: 差集B
             // 遍历集合A中所有的元素，如果发现，集合A中的元素，在集合B中不存在，那么false
@@ -175,8 +175,9 @@
     setB.add('nba')
     setB.add('cba')
 
+
     // 2. 求两个集合的并集
-    unionSet = setA.union(setB)
+    const unionSet = setA.union(setB)
     alert(unionSet.values())
     console.log(unionSet.values())
 

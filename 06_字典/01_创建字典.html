@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创建字典</title>
+</head>
+<body>
+<script>
+    // 封装字典类
+    function Dictionary () {
+        // 字典属性
+        this.items = {}
+
+        // 字典操作方法
+        // 一. 在字典中添加键值对
+        Dictionary.prototype.set = function (key, value) {
+            this.items[key] = value
+        }
+    }
+
+    // 创建字典对象
+    let dict = new Dictionary()
+
+    // 在字典中添加元素
+    dict.set('age',18)
+    dict.set('name','zs')
+    dict.set('height',1.88)
+    dict.set('address','广州市')
+    console.log(dict)
+</script>
+</body>
+</html>

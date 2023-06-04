@@ -43,10 +43,10 @@
             return Object.keys(this.items)
         }
 
-        //六.size方法
-        // Dictionary.prototype.size = function () {
-        //     return this.items.legnth
-        // }
+        // 六.size方法
+        Dictionary.prototype.size = function () {
+            return this.keys().length
+        }
     }
 
     // 创建字典对象
@@ -67,9 +67,9 @@
     console.log(dict)
 
     // 获取字典的信息
-    console.log(dict.get('age'))
-    console.log(dict.keys())
-
+    console.log(dict.get('age')) // 18
+    console.log(dict.keys()) // ['age', 'height', 'address']
+    console.log(dict.size()) // 3
 </script>
 </body>
 </html>

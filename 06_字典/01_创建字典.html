@@ -18,6 +18,23 @@
         Dictionary.prototype.set = function (key, value) {
             this.items[key] = value
         }
+
+        // 二.判断字典中是否有某个key
+        Dictionary.prototype.has = function (key) {
+            return this.items.hasOwnProperty(key)
+        }
+
+        // 三.从字典中移除元素
+        Dictionary.prototype.remove = function (key) {
+            //1.判断字典中是否有这个key
+            if (!this.has(key)) return false
+            //2.从字典中删除key
+            delete this.items[key]
+            return true
+        }
+
+        //四.根据key获取value
+        // Dictionary.prototype.get
     }
 
     // 创建字典对象
@@ -29,6 +46,12 @@
     dict.set('height',1.88)
     dict.set('address','广州市')
     console.log(dict)
+
+    console.log(dict.has('age')) // true
+
+    dict.remove('name')
+    console.log(dict)
+
 </script>
 </body>
 </html>

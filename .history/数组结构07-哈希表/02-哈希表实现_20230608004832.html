@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>哈希表实现</title>
+</head>
+<body>
+<script>
+     
+     //  封装哈希表类
+     function HashTable () {
+        // 属性
+        this.storage = []
+        this.count = 0
+        this.limit = 7
+
+        // 方法
+        // 哈希函数
+        function hashFunc (str,size) {
+            // 1. 定义hashCode变量
+            let hashCode = 0
+
+            // 2. 霍纳算法，来计算hashCode的值
+            // cats => Unicode编码
+            for (let i = 0; i < str.length; i++) {
+                hashCode = 37 * hashCode + str.charCodeAt(i)
+            }
+
+            // 3. 取余操作
+            let index = hashCode % size
+            
+            return index
+        }
+
+     }
+</script>
+</body>
+</html>

@@ -6,18 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fa239645-5ce1-440d-a0e6-55e76421d23e" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_数组结构/01_为什么使用数组.html" beforeDir="false" afterPath="$PROJECT_DIR$/数组结构01-数组/01_为什么使用数组.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_数组结构/02_创建和初始化数组.html" beforeDir="false" afterPath="$PROJECT_DIR$/数组结构01-数组/02_创建和初始化数组.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_数组结构/03_数组的常见操作.html" beforeDir="false" afterPath="$PROJECT_DIR$/数组结构01-数组/03_数组的常见操作.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_数组结构/04_数组的合并.html" beforeDir="false" afterPath="$PROJECT_DIR$/数组结构01-数组/04_数组的合并.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_数组结构/05_reduce方法.html" beforeDir="false" afterPath="$PROJECT_DIR$/数组结构01-数组/05_reduce方法.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02_栈结构/01_栈的封装.html" beforeDir="false" afterPath="$PROJECT_DIR$/数组结构02-栈结构/01_栈的封装.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_队列结构/01_封装队列.html" beforeDir="false" afterPath="$PROJECT_DIR$/数组结构03-队列结构/01_封装队列.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_队列结构/02_优先级队列.html" beforeDir="false" afterPath="$PROJECT_DIR$/数组结构03-队列结构/02_优先级队列.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04_链表结构/01_单项链表.html" beforeDir="false" afterPath="$PROJECT_DIR$/数组结构04-链表结构/01_单项链表.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04_链表结构/02_双向链表.html" beforeDir="false" afterPath="$PROJECT_DIR$/数组结构04-链表结构/02_双向链表.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/05_集合结构/01_封装集合.html" beforeDir="false" afterPath="$PROJECT_DIR$/数组结构05-集合结构/01_封装集合.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/06_字典/01_创建字典.html" beforeDir="false" afterPath="$PROJECT_DIR$/数组结构06-字典/01_创建字典.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +64,7 @@
       <workItem from="1685173977869" duration="4653000" />
       <workItem from="1685261907829" duration="11608000" />
       <workItem from="1685548348397" duration="2693000" />
-      <workItem from="1685720945654" duration="23829000" />
+      <workItem from="1685720945654" duration="28265000" />
     </task>
     <servers />
   </component>

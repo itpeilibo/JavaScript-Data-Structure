@@ -89,7 +89,7 @@
         }
 
         // 删除操作
-        HashTable.prototype.remove = function (key) {
+        HashTable.prototype.del = function (key) {
             // 1. 根据key获取对应的index
             let index = this.hashFunc(key,this.limit) 
 
@@ -119,33 +119,7 @@
         HashTable.prototype.isEmpty = function () {
             return this.count == 0
         }
-
-        // 获取哈希表中元素的个数
-        HashTable.prototype.size = function () {
-            return this.count
-        }
     }
-
-    // 测试哈希表
-    // 1. 创建哈希表
-    let ht = new HashTable()
-
-    // 2. 插入数据
-    ht.put('abc','123')
-    ht.put('cba','321')
-    ht.put('nba','531')
-    ht.put('mba','520')
-
-    // 3. 获取数据
-    alert(ht.get('abc'))
-
-    // 4. 修改方法
-    ht.put('abc','111')
-    alert(ht.get('abc'))
-
-    // 5. 删除方法
-    ht.remove('abc')
-    alert(ht.get('abc'))
 </script>
 </body>
 </html>

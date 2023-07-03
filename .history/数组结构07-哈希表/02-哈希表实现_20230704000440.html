@@ -89,7 +89,7 @@
         }
 
         // 删除操作
-        HashTable.prototype.remove = function (key) {
+        HashTable.prototype.del = function (key) {
             // 1. 根据key获取对应的index
             let index = this.hashFunc(key,this.limit) 
 
@@ -140,12 +140,7 @@
     alert(ht.get('abc'))
 
     // 4. 修改方法
-    ht.put('abc','111')
-    alert(ht.get('abc'))
-
-    // 5. 删除方法
-    ht.remove('abc')
-    alert(ht.get('abc'))
+    ht.put('abc',111)
 </script>
 </body>
 </html>

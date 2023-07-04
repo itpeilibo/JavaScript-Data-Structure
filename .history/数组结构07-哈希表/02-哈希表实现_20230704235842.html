@@ -111,11 +111,6 @@
                     bucket.splice(i,1)
                     this.count--
                     return tuple[1]
-
-                    // 缩小容量
-                    if (this.limit > 7 && this.count < this.limit * 0.25) {
-                        this.resize(Math.floor(this.limit / 2))
-                    } 
                 }
             }
             

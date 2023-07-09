@@ -63,9 +63,7 @@
 
             // 6. 判断是否需要扩容操作
             if(this.count > this.limit * 0.75) {
-                let newSize = this.limit * 2
-                let newPrime = this.getPrime(newSize)
-                this.resize(newPrime)
+                this.resize(this.limit * 2)
             }
         }
 
@@ -118,7 +116,7 @@
                     if (this.limit > 7 && this.count < this.limit * 0.25) {
                         let newSize = Math.floor(this.limit / 2)
                         let newPrime = this.getPrime(newSize)
-                        this.resize(newPrime)
+                        this.resize(Math.floor(this.limit / 2))
                     } 
                 }
             }
@@ -184,11 +182,6 @@
         
         // 获取质数的方法
         HashTable.prototype.getPrime  = function (num) {
-            // 14 -> 17
-            // 34 -> 37
-            while(!this.isPrime(num)) {
-                
-            }
 
         }
         

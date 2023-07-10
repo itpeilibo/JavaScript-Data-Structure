@@ -123,7 +123,7 @@
 
             // 2. 依次向右不断的查找，直到节点为null
             let key = null
-            while (node != null) {
+            if (node != null) {
                 key = node.key
                 node = node.right
             }
@@ -173,7 +173,7 @@
     bst.preOrderTraversal(function (key) {
         resultString += key + ' '
     })
-    // alert(resultString)
+    alert(resultString)
 
     // 2. 测试中序遍历
 
@@ -181,18 +181,14 @@
     bst.midOrderTraversal (function(key) {
         resultString2 += key + '=>'
     })
-    // alert(resultString2)
+    alert(resultString2)
 
     // 3. 测试后续遍历
        let resultString3 = ''
     bst.postOrderTraversal (function(key) {
         resultString3 += key + '=>'
     })
-    // alert(resultString3)
-
-    // 4. 测试最值
-    alert(bst.max())
-    alert(bst.min())
+    alert(resultString3)
 </script>
 </body>
 </html>

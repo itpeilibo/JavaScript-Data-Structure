@@ -123,7 +123,7 @@
 
             // 2. 依次向右不断的查找，直到节点为null
             let key = null
-            while (node != null) {
+            if (node != null) {
                 key = node.key
                 node = node.right
             }

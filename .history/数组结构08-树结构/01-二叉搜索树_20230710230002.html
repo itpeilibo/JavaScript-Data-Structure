@@ -56,13 +56,13 @@
 
         // 树的遍历
         // 1. 先序遍历
-        BinarySerachTree.prototype.preOrderTraversal = function (handler) {
+        BinarySerachTree.prototype.preOrderTraversal = function () {
             this.preOrderTraversalNode(this.root,handler)
         }
         // 第一次：node -> 11
         // 第一次：node -> 7
         // 第一次：node -> 5
-        BinarySerachTree.prototype.preOrderTraversalNode = function (node,handler) {
+        BinarySerachTree.prototype.preOrderTraversalNode = function (node,handler ) {
             if (node != null) {
                 // 1. 处理经过的节点
                 handler(node.key)
@@ -96,8 +96,6 @@
     bst.insert(20)
     bst.insert(18)
     bst.insert(25)
-    bst.insert(6)
-    console.log(bst);
 
     // 3. 测试遍历
     let resultString = ''

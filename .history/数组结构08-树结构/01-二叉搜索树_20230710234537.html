@@ -106,7 +106,7 @@
                 this.postOrderTraversalNode(node.left,handler)
 
                 // 2. 查找右子树中的节点
-                this.postOrderTraversalNode(node.right,handler)
+                this.preOrderTraversalNode(node.right,handler)
 
                 // 3. 处理节点
                 handler(node.key)
@@ -139,27 +139,19 @@
     console.log(bst);
 
     // 3. 测试遍历
-    // 1. 测试先序遍历
     let resultString = ''
     bst.preOrderTraversal(function (key) {
         resultString += key + ' '
     })
     alert(resultString)
 
-    // 2. 测试中序遍历
+    // 4. 测试中序遍历
 
     let resultString2 = ''
     bst.midOrderTraversal (function(key) {
         resultString2 += key + '=>'
     })
     alert(resultString2)
-
-    // 3. 测试后续遍历
-       let resultString3 = ''
-    bst.postOrderTraversal (function(key) {
-        resultString3 += key + '=>'
-    })
-    alert(resultString3)
 </script>
 </body>
 </html>

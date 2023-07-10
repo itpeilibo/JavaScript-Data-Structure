@@ -106,7 +106,7 @@
                 this.postOrderTraversalNode(node.left,handler)
 
                 // 2. 查找右子树中的节点
-                this.postOrderTraversalNode(node.right,handler)
+                this.preOrderTraversalNode(node.right,handler)
 
                 // 3. 处理节点
                 handler(node.key)

@@ -189,15 +189,6 @@
             // 2. 根据对应的情况删除节点
             // 找到了 current.key == key
             // 2.1 删除的节点有一个子节点
-            if (current.left == null && current.right == null) {
-                if (current == this.root) {
-                    this.root = null
-                } else if (isLeftChild) {
-                    parent.left = null
-                } else {
-                    parent.right = null
-                }
-            }
 
             // 2.2 删除的节点右两个子节点
 

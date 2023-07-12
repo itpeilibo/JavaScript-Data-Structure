@@ -192,10 +192,6 @@
             if (current.left == null && current.right == null) {
                 if (current == this.root) {
                     this.root = null
-                } else if (isLeftChild) {
-                    parent.left = null
-                } else {
-                    parent.right = null
                 }
             }
 

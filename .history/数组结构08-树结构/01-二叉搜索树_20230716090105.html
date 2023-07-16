@@ -200,23 +200,7 @@
             }
 
             // 2.2 删除的节点右一个子节点
-            else if (current.right == null) {
-                if (current == this.root) {
-                    this.root = current.left
-                } else if (isLeftChild) {
-                    parent.left = current.left
-                } else {
-                    parent.right = current.right
-                }
-            } else if (current.left == null) {
-                if (current == this.root) {
-                    this.root = current.right
-                } else if (isLeftChild) {
-                    parent.left = current.left
-                } else {
-                    parent.right = current.right
-                }
-            }
+            else if (current.right == null)
 
         }
     }

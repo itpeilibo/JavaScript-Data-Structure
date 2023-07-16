@@ -203,15 +203,14 @@
             else if (current.right == null) {
                 if (current == this.root) {
                     this.root = current.left
-                } else if (isLeftChild) {
+                }
+                if (isLeftChild) {
                     parent.left = current.left
                 } else {
                     parent.right = current.right
                 }
             } else if (current.left == null) {
-                if (current == this.root) {
-                    this.root = current.right
-                } else if (isLeftChild) {
+                if (isLeftChild) {
                     parent.left = current.left
                 } else {
                     parent.right = current.right
